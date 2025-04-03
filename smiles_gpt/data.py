@@ -4,7 +4,7 @@
 __all__ = ("CSVDataset", "CSVDataModule", "CVSplitter", "LMDataset", "LMDataModule")
 
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import partial
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Literal, Optional, Sequence, Tuple, Union
@@ -174,7 +174,7 @@ class CSVDataModule(LightningDataModule):
     target_column: Union[None, str, List[str]] = None
     has_empty_target: bool = False
     task_type: Literal["classification", "regression"] = "classification"
-    splitter: CVSplitter = CVSplitter()
+    splitter: CVSplitter = field(default_factory=CVSplitter)
     batch_size: int = 16
     num_workers: int = 0
 

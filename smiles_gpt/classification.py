@@ -16,7 +16,7 @@ import torch.nn.functional as F
 from torchmetrics import AUROC, AveragePrecision
 from transformers import GPT2Model, GPT2PreTrainedModel
 from transformers.modeling_outputs import SequenceClassifierOutputWithPast
-from transformers.adapters.model_mixin import ModelWithHeadsAdaptersMixin
+from adapters.model_mixin import ModelWithHeadsAdaptersMixin
 
 
 @dataclass
